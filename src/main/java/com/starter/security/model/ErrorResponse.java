@@ -1,6 +1,6 @@
-package com.calewiz.security.model;
+package com.starter.security.model;
 
-import com.calewiz.security.ErrorCode;
+import com.starter.security.ErrorCode;
 import lombok.Value;
 import org.springframework.http.HttpStatus;
 

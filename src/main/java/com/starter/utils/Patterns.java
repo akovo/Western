@@ -1,4 +1,4 @@
-package com.starter;
+package com.starter.utils;
 
 public class Patterns {
 

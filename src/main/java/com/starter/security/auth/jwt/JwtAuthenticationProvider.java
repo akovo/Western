@@ -1,9 +1,9 @@
-package com.calewiz.security.auth.jwt;
+package com.starter.security.auth.jwt;
 
-import com.calewiz.security.auth.JwtAuthenticationToken;
-import com.calewiz.security.config.JwtSettings;
-import com.calewiz.security.model.token.RawAccessJwtToken;
-import com.calewiz.security.user.UserContext;
+import com.starter.security.auth.JwtAuthenticationToken;
+import com.starter.security.config.JwtSettings;
+import com.starter.security.model.token.RawAccessJwtToken;
+import com.starter.security.user.UserContext;
 import lombok.val;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.core.Authentication;

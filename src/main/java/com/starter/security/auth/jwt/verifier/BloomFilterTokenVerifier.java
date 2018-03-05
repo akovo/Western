@@ -1,4 +1,4 @@
-package com.calewiz.security.auth.jwt.verifier;
+package com.starter.security.auth.jwt.verifier;
 
 import org.springframework.stereotype.Component;
 

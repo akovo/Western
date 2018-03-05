@@ -1,4 +1,4 @@
-package com.calewiz.security;
+package com.starter.security;
 
 import lombok.val;
 import org.springframework.web.cors.CorsConfiguration;

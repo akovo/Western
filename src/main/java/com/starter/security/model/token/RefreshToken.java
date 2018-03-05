@@ -1,6 +1,6 @@
-package com.calewiz.security.model.token;
+package com.starter.security.model.token;
 
-import com.calewiz.security.model.Scopes;
+import com.starter.security.model.Scopes;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import lombok.AllArgsConstructor;

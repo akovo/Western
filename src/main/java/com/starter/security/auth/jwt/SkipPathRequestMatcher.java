@@ -1,4 +1,4 @@
-package com.calewiz.security.auth.jwt;
+package com.starter.security.auth.jwt;
 
 import io.jsonwebtoken.lang.Assert;
 import lombok.val;

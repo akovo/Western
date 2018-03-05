@@ -1,4 +1,4 @@
-package com.calewiz.security.model.token;
+package com.starter.security.model.token;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.jsonwebtoken.Claims;

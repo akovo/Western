@@ -1,4 +1,4 @@
-package com.calewiz.security.model;
+package com.starter.security.model;
 
 public enum Scopes {
 

@@ -1,4 +1,4 @@
-package com.calewiz.security;
+package com.starter.security;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.AllArgsConstructor;

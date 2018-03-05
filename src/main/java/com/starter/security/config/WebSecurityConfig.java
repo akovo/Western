@@ -1,16 +1,16 @@
-package com.calewiz.security.config;
+package com.starter.security.config;
 
-import com.calewiz.security.CustomCorsFilter;
-import com.calewiz.security.RestAuthenticationEntryPoint;
-import com.calewiz.security.auth.ajax.AjaxAuthenticationProvider;
-import com.calewiz.security.auth.ajax.AjaxLoginProcessingFilter;
-import com.calewiz.security.auth.jwt.JwtAuthenticationProvider;
-import com.calewiz.security.auth.jwt.JwtTokenAuthenticationProcessingFilter;
-import com.calewiz.security.auth.jwt.SkipPathRequestMatcher;
-import com.calewiz.security.auth.jwt.extractor.TokenExtractor;
-import com.calewiz.security.user.CustomUserDetailsService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableList;
+import com.starter.security.CustomCorsFilter;
+import com.starter.security.RestAuthenticationEntryPoint;
+import com.starter.security.auth.ajax.AjaxAuthenticationProvider;
+import com.starter.security.auth.ajax.AjaxLoginProcessingFilter;
+import com.starter.security.auth.jwt.JwtAuthenticationProvider;
+import com.starter.security.auth.jwt.JwtTokenAuthenticationProcessingFilter;
+import com.starter.security.auth.jwt.SkipPathRequestMatcher;
+import com.starter.security.auth.jwt.extractor.TokenExtractor;
+import com.starter.security.user.CustomUserDetailsService;
 import lombok.val;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -39,11 +39,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     //paths to skip for JWT auth
     private static final String FORM_BASED_LOGIN_ENTRY_POINT = "/api/auth/login";
     private static final String TOKEN_REFRESH_ENTRY_POINT = "/api/auth/token";
-    private static final String CREATE_ORGANIZATION = "/api/v1/organization/create";
-    private static final String VERIFICATION_TOKEN = "/api/v1/verification_token/**";
+    private static final String CREATE_USER = "/api/user/create";
 
     private static final List<String> PATHS_TO_SKIP_FOR_JWT_AUTH =
-            ImmutableList.of(TOKEN_REFRESH_ENTRY_POINT, CREATE_ORGANIZATION, FORM_BASED_LOGIN_ENTRY_POINT, VERIFICATION_TOKEN);
+            ImmutableList.of(TOKEN_REFRESH_ENTRY_POINT, CREATE_USER, FORM_BASED_LOGIN_ENTRY_POINT);
 
     private final RestAuthenticationEntryPoint authenticationEntryPoint;
     private final AuthenticationSuccessHandler authenticationSuccessHandler;
@@ -100,25 +99,25 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authenticationEntryPoint(this.authenticationEntryPoint)
 
                 .and()
-                    .sessionManagement()
-                    .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 
                 .and()
-                    .authorizeRequests()
-                        //permit all for authorization features
-                        .antMatchers(FORM_BASED_LOGIN_ENTRY_POINT).permitAll()
-                        .antMatchers(TOKEN_REFRESH_ENTRY_POINT).permitAll()
+                .authorizeRequests()
+                //permit all for authorization features
+                .antMatchers(FORM_BASED_LOGIN_ENTRY_POINT).permitAll()
+                .antMatchers(TOKEN_REFRESH_ENTRY_POINT).permitAll()
 
-                        //permit all for api endpoints
-                        .antMatchers(CREATE_ORGANIZATION).permitAll()
-                        .antMatchers(VERIFICATION_TOKEN).permitAll()
+                //permit all for api endpoints
+                .antMatchers(CREATE_USER).permitAll()
 
-                        .antMatchers(TOKEN_BASED_AUTH_ENTRY_POINT).authenticated()
+                .antMatchers(TOKEN_BASED_AUTH_ENTRY_POINT).authenticated()
 
 
                 .and()
-                    .addFilterBefore(new CustomCorsFilter(), UsernamePasswordAuthenticationFilter.class)
-                    .addFilterBefore(buildAjaxLoginProcessingFilter(), UsernamePasswordAuthenticationFilter.class)
-                    .addFilterBefore(buildJwtTokenAuthenticationProcessingFilter(), UsernamePasswordAuthenticationFilter.class);
+                .addFilterBefore(new CustomCorsFilter(), UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(buildAjaxLoginProcessingFilter(), UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(buildJwtTokenAuthenticationProcessingFilter(), UsernamePasswordAuthenticationFilter.class);
     }
 }
+

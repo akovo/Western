@@ -1,10 +1,10 @@
-package com.calewiz.security.auth.ajax;
+package com.starter.security.auth.ajax;
 
-import com.calewiz.security.ErrorCode;
-import com.calewiz.security.exceptions.AuthMethodNotSupportedException;
-import com.calewiz.security.exceptions.JwtExpiredTokenException;
-import com.calewiz.security.model.ErrorResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.starter.security.ErrorCode;
+import com.starter.security.exceptions.AuthMethodNotSupportedException;
+import com.starter.security.exceptions.JwtExpiredTokenException;
+import com.starter.security.model.ErrorResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

@@ -1,4 +1,4 @@
-package com.calewiz.security.auth.jwt.extractor;
+package com.starter.security.auth.jwt.extractor;
 
 public interface TokenExtractor {
 

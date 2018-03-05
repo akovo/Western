@@ -1,4 +1,4 @@
-package com.calewiz.security;
+package com.starter.security;
 
 import org.springframework.security.web.savedrequest.SavedRequest;
 

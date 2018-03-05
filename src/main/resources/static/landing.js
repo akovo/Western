@@ -4,7 +4,7 @@ $("#pos").click(function(){
 $( document ).ready(
 function() {
       var token = localStorage.getItem("token");
-       var request = new Request('http://79e49519.ngrok.io/api/portfolio/value',{
+       var request = new Request('/api/portfolio/value',{
              method: 'GET',
              headers: new Headers({
               'Content-Type': '   application/json',

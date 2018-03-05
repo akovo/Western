@@ -1,4 +1,4 @@
-package com.calewiz.security.auth.ajax;
+package com.starter.security.auth.ajax;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Value;

@@ -1,8 +1,6 @@
-package com.calewiz.security.user;
+package com.starter.security.user;
 
-import com.calewiz.models.entities.User;
-import com.calewiz.models.entities.enumerations.UserStatus;
-import com.calewiz.security.UserRole;
+import com.starter.models.entities.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -11,7 +9,6 @@ import java.util.Set;
 public class CustomUserPrincipal implements UserDetails {
 
     private User user;
-    private Authorities authorities;
 
     CustomUserPrincipal(User user) {
         this.user = user;
@@ -19,8 +16,7 @@ public class CustomUserPrincipal implements UserDetails {
 
     @Override
     public Set<GrantedAuthority> getAuthorities() {
-        return Authorities.generateGrantedAuthorities(user.getId(), user.getOrganization().getId(),
-                UserRole.fromUserStatusAndType(user.getUserStatus(), user.getUserType()));
+        return Authorities.generateGrantedAuthorities(user.getId(), user.getEmail());
     }
 
     @Override
@@ -35,25 +31,21 @@ public class CustomUserPrincipal implements UserDetails {
 
     @Override
     public boolean isAccountNonExpired() {
-        return user.getUserStatus() == UserStatus.ACTIVE;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return user.getUserStatus() == UserStatus.ACTIVE;
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return user.getUserStatus() == UserStatus.ACTIVE;
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return user.getUserStatus() == UserStatus.ACTIVE;
-    }
-
-    public Long getOrganizationId() {
-        return user.getOrganization().getId();
+        return true;
     }
 }

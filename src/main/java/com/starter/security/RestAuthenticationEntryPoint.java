@@ -1,4 +1,4 @@
-package com.calewiz.security;
+package com.starter.security;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.AuthenticationException;

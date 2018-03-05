@@ -12,7 +12,7 @@ $("#pos").click(function(){
 
 function Authorize(user,pass){
     console.log(user + " " + pass);
-    var request = new Request('http://79e49519.ngrok.io/api/auth/login',{
+    var request = new Request('/api/auth/login',{
              method: 'POST',
              body: JSON.stringify({"username":user,"password":pass}),
              headers: new Headers({

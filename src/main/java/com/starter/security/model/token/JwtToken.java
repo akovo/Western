@@ -1,4 +1,4 @@
-package com.calewiz.security.model.token;
+package com.starter.security.model.token;
 
 public interface JwtToken {
 

@@ -1,6 +1,6 @@
-package com.calewiz.security.exceptions;
+package com.starter.security.exceptions;
 
-import com.calewiz.security.model.token.JwtToken;
+import com.starter.security.model.token.JwtToken;
 import lombok.Getter;
 import org.springframework.security.core.AuthenticationException;
 

@@ -1,8 +1,8 @@
-package com.calewiz.security.auth.ajax;
+package com.starter.security.auth.ajax;
 
-import com.calewiz.security.WebUtil;
-import com.calewiz.security.exceptions.AuthMethodNotSupportedException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.starter.security.WebUtil;
+import com.starter.security.exceptions.AuthMethodNotSupportedException;
 import lombok.extern.slf4j.Slf4j;
 import lombok.val;
 import org.apache.commons.lang3.StringUtils;

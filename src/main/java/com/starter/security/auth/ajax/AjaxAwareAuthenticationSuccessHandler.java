@@ -1,9 +1,9 @@
-package com.calewiz.security.auth.ajax;
+package com.starter.security.auth.ajax;
 
-import com.calewiz.security.user.UserContext;
-import com.calewiz.services.JwtTokenService;
-import com.calewiz.utils.UserUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.starter.security.user.UserContext;
+import com.starter.services.JwtTokenService;
+import com.starter.utils.UserUtils;
 import lombok.val;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -36,7 +36,7 @@ public class AjaxAwareAuthenticationSuccessHandler implements AuthenticationSucc
         val userContext = (UserContext) authentication.getPrincipal();
         val properties = UserUtils.getUserPropertiesFromUserContext(userContext);
 
-        val tokenResponse = jwtTokenService.generateTokensForUser(properties.getUserId(), properties.getOrganizationId(), properties.getEmail(), properties.getUserRole());
+        val tokenResponse = jwtTokenService.generateTokensForUser(properties.getUserId(),  properties.getEmail());
 
         httpServletResponse.setStatus(HttpStatus.OK.value());
         httpServletResponse.setContentType(MediaType.APPLICATION_JSON_VALUE);

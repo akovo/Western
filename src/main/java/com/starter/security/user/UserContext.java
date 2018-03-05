@@ -1,4 +1,4 @@
-package com.calewiz.security.user;
+package com.starter.security.user;
 
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;

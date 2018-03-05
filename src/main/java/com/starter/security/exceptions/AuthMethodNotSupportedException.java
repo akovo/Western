@@ -1,4 +1,4 @@
-package com.calewiz.security.exceptions;
+package com.starter.security.exceptions;
 
 import org.springframework.security.authentication.AuthenticationServiceException;
 

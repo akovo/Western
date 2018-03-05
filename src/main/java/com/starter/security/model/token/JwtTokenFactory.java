@@ -1,8 +1,8 @@
-package com.calewiz.security.model.token;
+package com.starter.security.model.token;
 
-import com.calewiz.security.config.JwtSettings;
-import com.calewiz.security.model.Scopes;
-import com.calewiz.security.user.UserContext;
+import com.starter.security.config.JwtSettings;
+import com.starter.security.model.Scopes;
+import com.starter.security.user.UserContext;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.val;
@@ -39,8 +39,8 @@ public class JwtTokenFactory {
                 .setIssuer(JwtSettings.getTokenIssuer())
                 .setIssuedAt(Date.from(currentTime.atZone(ZoneId.systemDefault()).toInstant()))
                 .setExpiration(Date.from(currentTime
-                    .plusMinutes(JwtSettings.getTokenExpirationTime())
-                    .atZone(ZoneId.systemDefault()).toInstant()))
+                        .plusMinutes(JwtSettings.getTokenExpirationTime())
+                        .atZone(ZoneId.systemDefault()).toInstant()))
                 .signWith(SignatureAlgorithm.HS512, JwtSettings.getTokenSigningKey())
                 .compact();
 

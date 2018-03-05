@@ -1,9 +1,8 @@
-package com.calewiz.security.user;
+package com.starter.security.user;
 
-import com.calewiz.models.entities.User;
-import com.calewiz.repositories.UserRepository;
+import com.starter.models.entities.User;
+import com.starter.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
@@ -27,3 +26,4 @@ public class CustomUserDetailsService implements UserDetailsService {
         return new CustomUserPrincipal(user);
     }
 }
+

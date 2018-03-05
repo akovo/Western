@@ -1,6 +1,6 @@
-package com.calewiz.security.model.token;
+package com.starter.security.model.token;
 
-import com.calewiz.security.exceptions.JwtExpiredTokenException;
+import com.starter.security.exceptions.JwtExpiredTokenException;
 import io.jsonwebtoken.*;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

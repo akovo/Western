@@ -1,4 +1,4 @@
-package com.calewiz.security.auth.jwt.extractor;
+package com.starter.security.auth.jwt.extractor;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.security.authentication.AuthenticationServiceException;

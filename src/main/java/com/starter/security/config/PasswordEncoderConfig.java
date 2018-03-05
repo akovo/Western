@@ -1,4 +1,4 @@
-package com.calewiz.security.config;
+package com.starter.security.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

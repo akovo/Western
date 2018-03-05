@@ -13,13 +13,13 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 @RestController
-@RequestMapping("/api/v1/user/create")
-public class V1CreateUserController {
+@RequestMapping("/api/user/create")
+public class CreateUserController {
 
     private final UserCreationService userCreationService;
 
     @Autowired
-    private V1CreateUserController(UserCreationService userCreationService) {
+    public CreateUserController(UserCreationService userCreationService) {
         this.userCreationService = userCreationService;
     }
 
